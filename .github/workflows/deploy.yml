@@ -14,8 +14,7 @@ jobs:
         with:
           host: ${{ secrets.VPS_IP }}
           username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_PRIVATE_KEY }}
-          port: 443
+          key: ${{ secrets.VPS_PASSWORD}}
           debug: true
           script: |
             cd ~/projects/portfolio
