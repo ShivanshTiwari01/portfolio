@@ -14,9 +14,9 @@ jobs:
         with:
           host: ${{ secrets.VPS_IP }}
           username: ${{ secrets.VPS_USER }}
-          password: ${{ secrets.VPS_PASSWORD }}
+          key: ${{ secrets.VPS_PRIVATE_KEY }}
           script: |
-            cd ~/projects/CODE_WITH_SHIVANSH
+            cd ~/projects/portfolio
 
             git pull origin main
 

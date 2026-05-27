@@ -10,7 +10,6 @@ Welcome to my interactive, modern portfolio! This project showcases my work, ski
 - **Projects Showcase** with interactive cards
 - **Contact & About Sections**
 - **Dark/Light Theme Toggle**
-- **User Tracking & Analytics** (IP, Location, User-Agent logging with Neon Serverless Postgres & IP Geolocation API)
 
 ## Tech Stack
 
@@ -19,26 +18,18 @@ Welcome to my interactive, modern portfolio! This project showcases my work, ski
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [tsParticles](https://particles.js.org/)
-- [Neon Serverless Postgres](https://neon.tech/)
-- [IP Geolocation](https://ipgeolocation.io/)
 
 ## Getting Started
 
-1. **Set up Environment Variables:**
-   Create a `.env.local` or `.env` file with the following keys:
-   ```sh
-   DATABASE_URL=your_neon_postgres_url
-   IPGEOLOCATION_API_KEY=your_api_key
-   ```
-2. **Install dependencies:**
+1. **Install dependencies:**
    ```sh
    npm install
    ```
-3. **Run the development server:**
+2. **Run the development server:**
    ```sh
    npm run dev
    ```
-4. **Open your browser:**
+3. **Open your browser:**
    Visit [http://localhost:3000](http://localhost:3000)
 
 ## Project Structure

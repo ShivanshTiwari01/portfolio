@@ -10,13 +10,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Shivansh Tiwari - Senior Software Developer',
+  title: 'Shivansh Tiwari - Software Engineer',
   description:
-    'Portfolio of Shivansh Tiwari — Senior Software Developer building scalable backend systems, AI-integrated apps, and full-stack products end-to-end.',
+    'Portfolio of Shivansh Tiwari — Full Stack Architect | Software Engineer building scalable backend systems, AI-integrated apps, and full-stack products end-to-end.',
   keywords:
-    'Shivansh Tiwari, Senior Software Developer, Full Stack Developer, Node.js, Next.js, React, Kafka, WebSockets, AI, System Architecture, Portfolio',
+    'Shivansh Tiwari, Software Engineer, Software Developer, Full Stack Developer, Node.js, Express.js, React, Next.js, RESTful APIs, WebSockets, AI, System Architecture, Portfolio',
   openGraph: {
-    title: 'Shivansh Tiwari - Senior Software Developer',
+    title: 'Shivansh Tiwari - Full Stack Engineer',
     description:
       'Building scalable, production-grade systems end-to-end — backends, AI-integrated apps, and polished frontends.',
     type: 'website',
@@ -30,13 +30,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' suppressHydrationWarning className={inter.variable}>
-      {' '}
-      {/* Add inter.variable if using CSS var */}
       <body className={`${inter.className} antialiased`}>
-        {' '}
-        {/* Ensure Inter class is applied and antialiased */}
         <ThemeProvider>{children}</ThemeProvider>
-        {/* Removed any potential Vercel/Next.js default banners here if they existed */}
       </body>
     </html>
   );
