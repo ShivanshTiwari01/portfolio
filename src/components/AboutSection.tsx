@@ -40,7 +40,7 @@ const AboutSection = () => (
         <p className='text-lg text-[var(--gray-700)] leading-relaxed mb-6'>
           I&apos;m a{' '}
           <span className='font-semibold text-[var(--primary)]'>
-            Senior Software Developer
+            Software Engineer - Full Stack Architect
           </span>{' '}
           with deep expertise in building scalable backend systems, real-time
           applications, and{' '}
