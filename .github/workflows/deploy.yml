@@ -19,7 +19,11 @@ jobs:
           script: |
             cd ~/projects/portfolio
 
-            git pull origin main
+            if [ ! -d .git ]; then
+              git clone https://github.com/ShivanshTiwari01/portfolio.git .
+            else
+              git pull origin main
+            fi
 
             docker compose down
             docker compose up -d --build
