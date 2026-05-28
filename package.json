@@ -8,6 +8,7 @@
     "start": "next start --port 9000",
     "lint": "next lint"
   },
+  "packageManager": "pnpm@10.32.0",
   "dependencies": {
     "@tsparticles/engine": "^3.8.1",
     "@tsparticles/react": "^3.0.0",
