@@ -2,9 +2,21 @@ import Image from 'next/image';
 import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const socialLinks = [
-  { href: 'https://github.com/ShivanshTiwari01', label: 'GitHub', icon: <FiGithub size={18} /> },
-  { href: 'https://linkedin.com/in/shivanshtiwari01', label: 'LinkedIn', icon: <FiLinkedin size={18} /> },
-  { href: 'mailto:shivanshtiwari2014@gmail.com', label: 'Email', icon: <FiMail size={18} /> },
+  {
+    href: 'https://github.com/ShivanshTiwari01',
+    label: 'GitHub',
+    icon: <FiGithub size={18} />,
+  },
+  {
+    href: 'https://linkedin.com/in/shivanshtiwari01',
+    label: 'LinkedIn',
+    icon: <FiLinkedin size={18} />,
+  },
+  {
+    href: 'mailto:shivanshtiwari2014@gmail.com',
+    label: 'Email',
+    icon: <FiMail size={18} />,
+  },
 ];
 
 const stats = [
@@ -33,7 +45,9 @@ const HeroSection = () => (
       </div>
 
       <div className='col-span-12 mt-7 flex justify-center'>
-        <span className='eyebrow'>Shivansh Tiwari / Software Engineer</span>
+        <span className='eyebrow'>
+          Software Engineer / Full Stack Architect
+        </span>
       </div>
 
       <div className='col-span-12 mt-6 md:col-start-2 md:col-span-10 lg:col-start-3 lg:col-span-8'>
@@ -44,11 +58,11 @@ const HeroSection = () => (
 
       <div className='col-span-12 mt-6 md:col-start-3 md:col-span-8'>
         <p className='text-center text-base leading-8 text-[var(--gray-700)] md:text-lg'>
-          As a kid, I opened up my CPU just to understand what was happening inside.
-          Engineering made me fall in love with low-level languages and the elegance
-          behind how machines really work. Today, in the era of agentic engineering,
-          I get to turn that same curiosity into scalable products, AI workflows,
-          and production systems.
+          As a kid, I opened up my CPU just to understand what was happening
+          inside. Engineering made me fall in love with low-level languages and
+          the elegance behind how machines really work. Today, in the era of
+          agentic engineering, I get to turn that same curiosity into scalable
+          products, AI workflows, and production systems.
         </p>
       </div>
 
@@ -74,7 +88,9 @@ const HeroSection = () => (
             key={link.label}
             href={link.href}
             target={link.href.startsWith('http') ? '_blank' : undefined}
-            rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            rel={
+              link.href.startsWith('http') ? 'noopener noreferrer' : undefined
+            }
             className='grid h-10 w-10 place-items-center rounded-full border border-[var(--gray-200)] bg-[var(--gray-50)] text-[var(--gray-700)] hover:bg-[var(--gray-100)] hover:text-[var(--foreground)]'
             aria-label={link.label}
           >
@@ -89,7 +105,9 @@ const HeroSection = () => (
             key={label}
             className='rounded-2xl border border-[var(--gray-200)] bg-[var(--gray-50)] px-4 py-5 text-center shadow-sm'
           >
-            <div className='text-2xl font-semibold text-[var(--foreground)]'>{value}</div>
+            <div className='text-2xl font-semibold text-[var(--foreground)]'>
+              {value}
+            </div>
             <div className='mt-1 text-xs font-medium uppercase tracking-wide text-[var(--gray-700)]'>
               {label}
             </div>

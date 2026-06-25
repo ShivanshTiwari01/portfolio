@@ -30,9 +30,10 @@ const AboutSection = () => (
           I care about systems that are simple to use and hard to break.
         </h2>
         <p className='mt-5 text-base leading-8 text-[var(--gray-700)]'>
-          I am a full-stack software engineer focused on scalable backend systems,
-          real-time applications, and polished product interfaces. My work sits at
-          the intersection of practical architecture, product clarity, and reliable execution.
+          I am a full-stack software engineer focused on scalable backend
+          systems, real-time applications, and polished product interfaces. My
+          work sits at the intersection of practical architecture, product
+          clarity, and reliable execution.
         </p>
       </div>
 
@@ -46,7 +47,9 @@ const AboutSection = () => (
               {area.icon}
             </div>
             <h3 className='text-lg font-semibold'>{area.title}</h3>
-            <p className='mt-3 text-sm leading-7 text-[var(--gray-700)]'>{area.text}</p>
+            <p className='mt-3 text-sm leading-7 text-[var(--gray-700)]'>
+              {area.text}
+            </p>
           </div>
         ))}
       </div>

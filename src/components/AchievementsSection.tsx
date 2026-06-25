@@ -34,8 +34,13 @@ const AchievementsSection = () => (
               key={achievement}
               className='flex gap-4 rounded-2xl border border-[var(--gray-200)] bg-[var(--background)] p-4'
             >
-              <FiCheckCircle className='mt-0.5 shrink-0 text-[var(--accent)]' size={19} />
-              <p className='text-sm leading-7 text-[var(--gray-700)]'>{achievement}</p>
+              <FiCheckCircle
+                className='mt-0.5 shrink-0 text-[var(--accent)]'
+                size={19}
+              />
+              <p className='text-sm leading-7 text-[var(--gray-700)]'>
+                {achievement}
+              </p>
             </div>
           ))}
         </div>

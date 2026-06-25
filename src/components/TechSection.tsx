@@ -1,11 +1,26 @@
 import { FiCpu } from 'react-icons/fi';
 
 const techStack: { category: string; items: string[] }[] = [
-  { category: 'Languages', items: ['TypeScript', 'JavaScript', 'Go', 'Python'] },
-  { category: 'Frontend', items: ['React', 'Next.js', 'Redux', 'Tailwind CSS', 'Vite'] },
-  { category: 'Backend', items: ['Node.js', 'Express', 'Gin', 'FastAPI', 'WebSockets'] },
-  { category: 'Data', items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Prisma'] },
-  { category: 'DevOps', items: ['Docker', 'AWS', 'Kubernetes', 'GitHub Actions', 'Linux'] },
+  {
+    category: 'Languages',
+    items: ['JavaScript', 'TypeScript', 'Go', 'Python'],
+  },
+  {
+    category: 'Frontend',
+    items: ['React', 'Next.js', 'Redux', 'Tailwind CSS'],
+  },
+  {
+    category: 'Backend',
+    items: ['Node.js', 'Express', 'Gin', 'FastAPI', 'WebSockets'],
+  },
+  {
+    category: 'Data',
+    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Prisma'],
+  },
+  {
+    category: 'DevOps',
+    items: ['AWS', 'Docker', 'Kubernetes', 'GitHub Actions', 'Linux'],
+  },
 ];
 
 const TechSection = () => (
