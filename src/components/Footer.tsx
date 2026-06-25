@@ -1,42 +1,29 @@
-import { FiGithub, FiLinkedin, FiMail, FiCoffee } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const Footer = () => (
-  <footer className='py-10 border-t border-[var(--gray-200)] bg-[var(--background)]'>
-    <div className='max-w-5xl mx-auto px-4 flex flex-col items-center gap-4'>
-      <div className='flex items-center gap-5'>
-        <a
-          href='https://github.com/ShivanshTiwari01'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='p-2 rounded-full text-[var(--gray-700)] hover:text-[var(--primary)] hover:bg-[var(--gray-100)] transition-all duration-300'
-          aria-label='GitHub'
-        >
-          <FiGithub size={20} />
-        </a>
-        <a
-          href='https://linkedin.com/in/shivanshtiwari01'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='p-2 rounded-full text-[var(--gray-700)] hover:text-[var(--primary)] hover:bg-[var(--gray-100)] transition-all duration-300'
-          aria-label='LinkedIn'
-        >
-          <FiLinkedin size={20} />
-        </a>
-        <a
-          href='mailto:shivanshtiwari2014@gmail.com'
-          className='p-2 rounded-full text-[var(--gray-700)] hover:text-[var(--primary)] hover:bg-[var(--gray-100)] transition-all duration-300'
-          aria-label='Email'
-        >
-          <FiMail size={20} />
-        </a>
-      </div>
+  <footer className='border-t border-[var(--gray-200)] px-4 py-10'>
+    <div className='section-shell flex flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left'>
       <p className='text-sm text-[var(--gray-700)]'>
-        © {new Date().getFullYear()} Shivansh Tiwari. All rights reserved.
+        &copy; {new Date().getFullYear()} Shivansh Tiwari. Built with Next.js.
       </p>
-      <p className='text-xs text-[var(--gray-700)]'>
-        Crafted with <FiCoffee className='inline-block text-[var(--primary)]' />{' '}
-        and passion in India.
-      </p>
+      <div className='flex items-center gap-2'>
+        {[
+          { href: 'https://github.com/ShivanshTiwari01', label: 'GitHub', icon: <FiGithub size={18} /> },
+          { href: 'https://linkedin.com/in/shivanshtiwari01', label: 'LinkedIn', icon: <FiLinkedin size={18} /> },
+          { href: 'mailto:shivanshtiwari2014@gmail.com', label: 'Email', icon: <FiMail size={18} /> },
+        ].map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            target={link.href.startsWith('http') ? '_blank' : undefined}
+            rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            className='grid h-10 w-10 place-items-center rounded-full border border-[var(--gray-200)] bg-[var(--gray-50)] text-[var(--gray-700)] hover:bg-[var(--gray-100)] hover:text-[var(--foreground)]'
+            aria-label={link.label}
+          >
+            {link.icon}
+          </a>
+        ))}
+      </div>
     </div>
   </footer>
 );

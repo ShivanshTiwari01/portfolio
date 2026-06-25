@@ -1,72 +1,54 @@
-import { FiUser, FiAward, FiBriefcase, FiUsers, FiBook } from 'react-icons/fi';
+import { FiCode, FiCpu, FiDatabase, FiUser } from 'react-icons/fi';
 
-const stats = [
-  { icon: <FiBriefcase size={22} />, value: '3+', label: 'Years Experience' },
-  { icon: <FiAward size={22} />, value: '4', label: 'Companies' },
-  { icon: <FiUsers size={22} />, value: '100K+', label: 'Users Served' },
-  { icon: <FiBook size={22} />, value: '100+', label: 'Students Mentored' },
+const focusAreas = [
+  {
+    icon: <FiDatabase size={20} />,
+    title: 'Backend platforms',
+    text: 'APIs, data models, queues, caching, and services designed for reliability under real usage.',
+  },
+  {
+    icon: <FiCode size={20} />,
+    title: 'Product engineering',
+    text: 'End-to-end delivery across Next.js, React, TypeScript, Node.js, Go, PostgreSQL, and Redis.',
+  },
+  {
+    icon: <FiCpu size={20} />,
+    title: 'AI integrations',
+    text: 'Practical LLM features, moderation flows, conversational products, and automation around user workflows.',
+  },
 ];
 
 const AboutSection = () => (
-  <section id='about' className='py-20 bg-[var(--background)]'>
-    <div className='max-w-5xl mx-auto px-4'>
-      <h2 className='text-4xl font-bold mb-10 text-center text-[var(--foreground)]'>
-        <FiUser
-          className='inline-block mr-3 mb-1 text-[var(--primary)]'
-          size={36}
-        />
-        About Me
-      </h2>
-
-      {/* Stats Strip */}
-      <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mb-10'>
-        {stats.map((stat) => (
-          <div
-            key={stat.label}
-            className='flex flex-col items-center justify-center gap-2 p-5 rounded-xl bg-[var(--gray-50)] border border-[var(--gray-200)] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300'
-          >
-            <span className='text-[var(--primary)]'>{stat.icon}</span>
-            <span className='text-3xl font-extrabold text-[var(--foreground)]'>
-              {stat.value}
-            </span>
-            <span className='text-sm text-[var(--gray-700)] font-medium text-center'>
-              {stat.label}
-            </span>
-          </div>
-        ))}
+  <section id='about' className='px-4 py-20'>
+    <div className='section-shell'>
+      <div className='mx-auto max-w-2xl text-center'>
+        <span className='eyebrow'>
+          <FiUser size={14} />
+          About
+        </span>
+        <h2 className='mt-5 text-4xl font-semibold md:text-5xl'>
+          I care about systems that are simple to use and hard to break.
+        </h2>
+        <p className='mt-5 text-base leading-8 text-[var(--gray-700)]'>
+          I am a full-stack software engineer focused on scalable backend systems,
+          real-time applications, and polished product interfaces. My work sits at
+          the intersection of practical architecture, product clarity, and reliable execution.
+        </p>
       </div>
 
-      <div className='bg-[var(--gray-50)] p-8 rounded-xl shadow-lg border border-[var(--gray-200)]'>
-        <p className='text-lg text-[var(--gray-700)] leading-relaxed mb-6'>
-          I&apos;m a{' '}
-          <span className='font-semibold text-[var(--primary)]'>
-            Software Engineer - Full Stack Architect
-          </span>{' '}
-          with deep expertise in building scalable backend systems, real-time
-          applications, and{' '}
-          <span className='font-semibold text-[var(--primary)]'>
-            AI-integrated products
-          </span>
-          . My passion lies in distributed systems, event-driven architecture,
-          and high-performance system design — crafting solutions that handle
-          real load, real users, and real intelligence.
-        </p>
-        <p className='text-lg text-[var(--gray-700)] leading-relaxed mb-6'>
-          I partner with product and leadership teams to convert business
-          requirements into{' '}
-          <span className='font-semibold'>
-            technical strategy and solutions
-          </span>
-          , driving system architecture and integrating AI capabilities — from
-          Python AI microservices to intelligent moderation systems — where they
-          create the most value. Beyond code, I love mentoring developers and
-          sharing what I know.
-        </p>
-        <p className='text-lg text-[var(--gray-700)] leading-relaxed'>
-          <span className='font-semibold'>Fun fact:</span> When I&apos;m not
-          shipping features, you can find me exploring nature, spending time
-          with animals, or deep-diving into system design papers.
-        </p>
+      <div className='mt-12 grid gap-4 md:grid-cols-3'>
+        {focusAreas.map((area) => (
+          <div
+            key={area.title}
+            className='rounded-2xl border border-[var(--gray-200)] bg-[var(--gray-50)] p-6 shadow-sm'
+          >
+            <div className='mb-5 grid h-10 w-10 place-items-center rounded-full bg-[var(--gray-100)] text-[var(--foreground)]'>
+              {area.icon}
+            </div>
+            <h3 className='text-lg font-semibold'>{area.title}</h3>
+            <p className='mt-3 text-sm leading-7 text-[var(--gray-700)]'>{area.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

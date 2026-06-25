@@ -1,144 +1,78 @@
-import { useTheme } from '../app/contexts/ThemeContext';
 import { useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const navLinks = [
   'About',
-  'Services',
   'Experience',
   'Tech',
   'Projects',
+  'Achievements',
   'Contact',
 ];
 
 const NavBar = () => {
-  const { theme, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className='fixed w-full bg-opacity-80 backdrop-blur-md bg-[var(--background)] z-50 border-b border-[var(--gray-200)] shadow-sm'>
-      <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between h-16'>
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className='text-xl font-bold text-[var(--primary)] cursor-pointer'
-          >
-            Home
-          </button>
+    <nav className='fixed inset-x-0 top-3 z-50 px-4'>
+      <div className='mx-auto grid h-14 max-w-5xl grid-cols-[1fr_auto_1fr] items-center rounded-full border border-[var(--gray-200)] bg-[var(--gray-50)]/90 px-3 shadow-sm backdrop-blur-xl'>
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className='justify-self-start rounded-full px-4 py-2 text-sm font-semibold text-[var(--foreground)] hover:bg-[var(--gray-100)]'
+        >
+          Shivansh Tiwari
+        </button>
 
-          <div className='flex items-center gap-4'>
-            {/* Desktop Nav */}
-            <div className='hidden md:flex space-x-5 text-sm font-medium'>
-              {navLinks.map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className='text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-300'
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-
-            {/* Hire Me Button */}
+        <div className='hidden items-center gap-1 md:flex'>
+          {navLinks.map((item) => (
             <a
-              href='#contact'
-              className='hidden md:inline-block px-4 py-2 rounded-full bg-[var(--primary)] text-white text-sm font-semibold hover:opacity-90 transition-all duration-300 shadow-md'
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className='rounded-full px-3 py-2 text-sm font-medium text-[var(--gray-700)] hover:bg-[var(--gray-100)] hover:text-[var(--foreground)]'
             >
-              Hire Me
+              {item}
             </a>
-
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className='p-2 rounded-lg hover:bg-[var(--gray-100)] transition-colors duration-300'
-              aria-label='Toggle theme'
-            >
-              {theme === 'light' ? (
-                <svg
-                  className='w-5 h-5 text-[var(--foreground)]'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className='w-5 h-5 text-[var(--foreground)]'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707'
-                  />
-                </svg>
-              )}
-            </button>
-
-            {/* Mobile Hamburger */}
-            <button
-              className='md:hidden p-2 rounded-lg hover:bg-[var(--gray-100)] transition-colors duration-300'
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label='Toggle menu'
-            >
-              <svg
-                className='w-5 h-5 text-[var(--foreground)]'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-              >
-                {menuOpen ? (
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M6 18L18 6M6 6l12 12'
-                  />
-                ) : (
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M4 6h16M4 12h16M4 18h16'
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
+          ))}
         </div>
 
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className='md:hidden pb-4 px-2 flex flex-col gap-2'>
-            {navLinks.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                onClick={() => setMenuOpen(false)}
-                className='block py-2 px-3 text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--gray-100)] rounded-lg transition-colors duration-200'
-              >
-                {item}
-              </a>
-            ))}
-            <a
-              href='#contact'
-              onClick={() => setMenuOpen(false)}
-              className='mt-1 text-center py-2 px-3 rounded-full bg-[var(--primary)] text-white text-sm font-semibold'
-            >
-              Hire Me
-            </a>
-          </div>
-        )}
+        <div className='flex justify-self-end'>
+          <a
+            href='#contact'
+            className='hidden rounded-full bg-[var(--foreground)] px-4 py-2 text-sm font-semibold text-[var(--background)] hover:opacity-90 md:inline-flex'
+          >
+            Hire me
+          </a>
+          <button
+            className='grid h-10 w-10 place-items-center rounded-full text-[var(--gray-700)] hover:bg-[var(--gray-100)] md:hidden'
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label='Toggle menu'
+          >
+            {menuOpen ? <FiX size={18} /> : <FiMenu size={18} />}
+          </button>
+        </div>
       </div>
+
+      {menuOpen && (
+        <div className='mx-auto mt-2 flex max-w-5xl flex-col rounded-2xl border border-[var(--gray-200)] bg-[var(--gray-50)] p-2 shadow-lg md:hidden'>
+          {navLinks.map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              onClick={() => setMenuOpen(false)}
+              className='rounded-xl px-4 py-3 text-sm font-medium text-[var(--gray-700)] hover:bg-[var(--gray-100)] hover:text-[var(--foreground)]'
+            >
+              {item}
+            </a>
+          ))}
+          <a
+            href='#contact'
+            onClick={() => setMenuOpen(false)}
+            className='mt-1 rounded-xl bg-[var(--foreground)] px-4 py-3 text-center text-sm font-semibold text-[var(--background)]'
+          >
+            Hire me
+          </a>
+        </div>
+      )}
     </nav>
   );
 };
