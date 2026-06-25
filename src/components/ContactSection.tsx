@@ -1,4 +1,10 @@
-import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi';
+import {
+  FiArrowUpRight,
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiPhone,
+} from 'react-icons/fi';
 
 const contactLinks = [
   {
@@ -38,8 +44,9 @@ const ContactSection = () => (
               Have a product, platform, or backend problem to solve?
             </h2>
             <p className='mt-5 text-base leading-8 text-[var(--gray-700)]'>
-              I am open to engineering roles, freelance product work, and technical
-              collaborations around full-stack systems, AI products, and scalable backends.
+              I am open to engineering roles, freelance product work, and
+              technical collaborations around full-stack systems, AI products,
+              and scalable backends.
             </p>
             <a
               href='mailto:shivanshtiwari2014@gmail.com'
@@ -56,7 +63,11 @@ const ContactSection = () => (
                 key={link.label}
                 href={link.href}
                 target={link.href.startsWith('http') ? '_blank' : undefined}
-                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                rel={
+                  link.href.startsWith('http')
+                    ? 'noopener noreferrer'
+                    : undefined
+                }
                 className='flex items-center justify-between gap-4 rounded-2xl border border-[var(--gray-200)] bg-[var(--background)] p-4 hover:bg-[var(--gray-100)]'
               >
                 <span className='flex min-w-0 items-center gap-4'>
@@ -72,7 +83,10 @@ const ContactSection = () => (
                     </span>
                   </span>
                 </span>
-                <FiArrowUpRight className='shrink-0 text-[var(--gray-700)]' size={17} />
+                <FiArrowUpRight
+                  className='shrink-0 text-[var(--gray-700)]'
+                  size={17}
+                />
               </a>
             ))}
           </div>

@@ -4,8 +4,16 @@ const projects = [
   {
     title: 'SIGNAL',
     description:
-      'AI-powered trading intelligence platform for NIFTY50 with live market context, Gemini-driven chat, onboarding, subscriptions, and usage tracking.',
-    tags: ['Next.js', 'React', 'TypeScript', 'Express', 'Prisma', 'PostgreSQL', 'Redis', 'Gemini'],
+      'AI-powered trading intelligence platform for NIFTY50 with live market context, AI-driven chat, onboarding, subscriptions, and usage tracking.',
+    tags: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Express',
+      'Prisma',
+      'PostgreSQL',
+      'Redis',
+    ],
     github: 'https://github.com/ShivanshTiwari01/signal',
     live: 'https://signal.shivanshlabs.in/',
   },
@@ -13,7 +21,16 @@ const projects = [
     title: 'Sketchify',
     description:
       'Real-time collaborative whiteboard with room-based sessions, WebSocket sync, JWT authentication, persistent canvas state, and shared monorepo packages.',
-    tags: ['Next.js', 'TypeScript', 'Turborepo', 'Express', 'WebSockets', 'Prisma', 'PostgreSQL', 'Zod'],
+    tags: [
+      'Next.js',
+      'TypeScript',
+      'Turborepo',
+      'Express',
+      'WebSockets',
+      'Prisma',
+      'PostgreSQL',
+      'Zod',
+    ],
     github: 'https://github.com/ShivanshTiwari01/sketchify',
     live: 'https://sketchify.shivanshlabs.in/',
   },
@@ -21,7 +38,15 @@ const projects = [
     title: 'Musicify',
     description:
       'Minimal Spotify-inspired music streaming platform with secure auth, auto-discovered local audio files, a persistent player UI, and containerized deployment.',
-    tags: ['Go', 'Gin', 'React', 'TypeScript', 'Vite', 'Tailwind CSS', 'PostgreSQL', 'Docker'],
+    tags: [
+      'Go',
+      'Gin',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'PostgreSQL',
+      'Docker',
+    ],
     github: 'https://github.com/ShivanshTiwari01/musicify',
     live: null,
   },
@@ -39,8 +64,8 @@ const ProjectsSection = () => (
           Recent projects with real product surfaces.
         </h2>
         <p className='mt-5 text-base leading-8 text-[var(--gray-700)]'>
-          A focused set of current work across AI, collaboration, real-time systems,
-          and media streaming.
+          A focused set of current work across AI, collaboration, real-time
+          systems, and media streaming.
         </p>
       </div>
 

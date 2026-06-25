@@ -64,7 +64,9 @@ const ExperienceSection = () => (
             <article className='rounded-2xl border border-[var(--gray-200)] bg-[var(--gray-50)] p-6 shadow-sm'>
               <div className='flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between'>
                 <div>
-                  <p className='text-sm font-semibold text-[var(--gray-700)]'>{exp.company}</p>
+                  <p className='text-sm font-semibold text-[var(--gray-700)]'>
+                    {exp.company}
+                  </p>
                   <h3 className='mt-1 text-xl font-semibold'>{exp.role}</h3>
                 </div>
                 <span className='inline-flex w-fit items-center gap-2 rounded-full border border-[var(--gray-200)] bg-[var(--background)] px-3 py-1.5 text-xs font-semibold text-[var(--gray-700)]'>
@@ -75,7 +77,10 @@ const ExperienceSection = () => (
 
               <ul className='mt-5 space-y-3'>
                 {exp.highlights.map((point) => (
-                  <li key={point} className='flex gap-3 text-sm leading-7 text-[var(--gray-700)]'>
+                  <li
+                    key={point}
+                    className='flex gap-3 text-sm leading-7 text-[var(--gray-700)]'
+                  >
                     <span className='mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--foreground)]' />
                     {point}
                   </li>
