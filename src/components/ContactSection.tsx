@@ -1,69 +1,82 @@
-import { FiMail, FiLinkedin, FiGithub, FiPhone } from 'react-icons/fi';
+import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi';
 
 const contactLinks = [
   {
     href: 'mailto:shivanshtiwari2014@gmail.com',
-    icon: <FiMail className='w-5 h-5' />,
-    label: 'shivanshtiwari2014@gmail.com',
-    cta: 'Send Email',
-    primary: true,
+    icon: <FiMail className='h-5 w-5' />,
+    label: 'Email',
+    value: 'shivanshtiwari2014@gmail.com',
   },
   {
     href: 'https://linkedin.com/in/shivanshtiwari01',
-    icon: <FiLinkedin className='w-5 h-5' />,
-    label: 'linkedin.com/in/shivanshtiwari01',
-    cta: 'Connect on LinkedIn',
-    primary: false,
+    icon: <FiLinkedin className='h-5 w-5' />,
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/shivanshtiwari01',
   },
   {
     href: 'https://github.com/ShivanshTiwari01',
-    icon: <FiGithub className='w-5 h-5' />,
-    label: 'github.com/ShivanshTiwari01',
-    cta: 'View GitHub',
-    primary: false,
+    icon: <FiGithub className='h-5 w-5' />,
+    label: 'GitHub',
+    value: 'github.com/ShivanshTiwari01',
   },
   {
     href: 'tel:+919971864916',
-    icon: <FiPhone className='w-5 h-5' />,
-    label: '+91 9971864916',
-    cta: 'Call Me',
-    primary: false,
+    icon: <FiPhone className='h-5 w-5' />,
+    label: 'Phone',
+    value: '+91 9971864916',
   },
 ];
 
 const ContactSection = () => (
-  <section id='contact' className='py-20 bg-[var(--background)]'>
-    <div className='max-w-3xl mx-auto px-4 text-center'>
-      <h2 className='text-4xl font-bold mb-4 text-[var(--foreground)]'>
-        Let&apos;s Build Something Great
-      </h2>
-      <p className='text-lg text-[var(--gray-700)] mb-12 leading-relaxed'>
-        Whether you need a scalable backend, a complete product, or a technical partner — I&apos;m here.
-        Reach out and let&apos;s discuss how I can help you ship faster and better.
-      </p>
+  <section id='contact' className='px-4 py-20'>
+    <div className='section-shell'>
+      <div className='rounded-3xl border border-[var(--gray-200)] bg-[var(--gray-50)] p-6 shadow-sm md:p-10'>
+        <div className='grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start'>
+          <div>
+            <span className='eyebrow'>Contact</span>
+            <h2 className='mt-5 text-4xl font-semibold md:text-5xl'>
+              Have a product, platform, or backend problem to solve?
+            </h2>
+            <p className='mt-5 text-base leading-8 text-[var(--gray-700)]'>
+              I am open to engineering roles, freelance product work, and technical
+              collaborations around full-stack systems, AI products, and scalable backends.
+            </p>
+            <a
+              href='mailto:shivanshtiwari2014@gmail.com'
+              className='mt-7 inline-flex items-center gap-2 rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-semibold text-[var(--background)] hover:opacity-90'
+            >
+              Send email
+              <FiArrowUpRight size={16} />
+            </a>
+          </div>
 
-      <div className='bg-[var(--gray-50)] rounded-2xl p-8 md:p-12 shadow-xl border border-[var(--gray-200)] space-y-4'>
-        {contactLinks.map((link) => (
-          <a
-            key={link.cta}
-            href={link.href}
-            target={link.href.startsWith('http') ? '_blank' : undefined}
-            rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            className={`flex items-center justify-between gap-4 w-full px-6 py-4 rounded-xl border transition-all duration-300 group
-              ${link.primary
-                ? 'bg-[var(--primary)] border-[var(--primary)] text-white hover:opacity-90 shadow-md'
-                : 'bg-[var(--background)] border-[var(--gray-200)] text-[var(--foreground)] hover:border-[var(--primary)] hover:shadow-md'
-              }`}
-          >
-            <span className='flex items-center gap-3'>
-              <span className={link.primary ? 'text-white' : 'text-[var(--primary)]'}>{link.icon}</span>
-              <span className='text-sm font-medium'>{link.label}</span>
-            </span>
-            <span className={`text-sm font-semibold whitespace-nowrap group-hover:translate-x-1 transition-transform duration-200 ${link.primary ? 'text-white' : 'text-[var(--primary)]'}`}>
-              {link.cta} →
-            </span>
-          </a>
-        ))}
+          <div className='grid gap-3'>
+            {contactLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className='flex items-center justify-between gap-4 rounded-2xl border border-[var(--gray-200)] bg-[var(--background)] p-4 hover:bg-[var(--gray-100)]'
+              >
+                <span className='flex min-w-0 items-center gap-4'>
+                  <span className='grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[var(--gray-50)] text-[var(--foreground)]'>
+                    {link.icon}
+                  </span>
+                  <span className='min-w-0'>
+                    <span className='block text-xs font-semibold uppercase tracking-wide text-[var(--gray-700)]'>
+                      {link.label}
+                    </span>
+                    <span className='block truncate text-sm font-medium text-[var(--foreground)]'>
+                      {link.value}
+                    </span>
+                  </span>
+                </span>
+                <FiArrowUpRight className='shrink-0 text-[var(--gray-700)]' size={17} />
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   </section>

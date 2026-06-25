@@ -1,139 +1,103 @@
-import { useEffect, useMemo, useState } from 'react';
-import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { OutMode } from '@tsparticles/engine';
-import { loadSlim } from '@tsparticles/slim';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
-const HeroSection = () => {
-  const [init, setInit] = useState(false);
+const socialLinks = [
+  { href: 'https://github.com/ShivanshTiwari01', label: 'GitHub', icon: <FiGithub size={18} /> },
+  { href: 'https://linkedin.com/in/shivanshtiwari01', label: 'LinkedIn', icon: <FiLinkedin size={18} /> },
+  { href: 'mailto:shivanshtiwari2014@gmail.com', label: 'Email', icon: <FiMail size={18} /> },
+];
 
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => setInit(true));
-  }, []);
+const stats = [
+  ['3+', 'Years experience'],
+  ['100K+', 'Users served'],
+  ['500+', 'Problems solved'],
+  ['Top 1%', 'Code360 rank'],
+];
 
-  const particlesOptions = useMemo(
-    () => ({
-      background: { color: { value: 'transparent' } },
-      fpsLimit: 60,
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: 'repulse' },
-          resize: { enable: true },
-        },
-        modes: {
-          repulse: { distance: 100, duration: 0.4 },
-        },
-      },
-      particles: {
-        color: { value: '#fff' },
-        links: {
-          enable: true,
-          color: '#fff',
-          distance: 150,
-          opacity: 0.2,
-          width: 1,
-        },
-        move: { enable: true, speed: 1, outModes: { default: OutMode.bounce } },
-        number: { value: 40, density: { enable: true, area: 800 } },
-        opacity: { value: 0.3 },
-        shape: { type: 'circle' },
-        size: { value: { min: 1, max: 4 } },
-      },
-      detectRetina: true,
-    }),
-    [],
-  );
-
-  return (
-    <section className='relative pt-32 pb-32 px-4 bg-gradient-to-br from-[var(--primary)] via-[#3b82f6] to-[#1e40af] text-white overflow-hidden'>
-      {init && (
-        <Particles
-          id='tsparticles'
-          options={particlesOptions}
-          className='absolute inset-0 w-full h-full z-0 pointer-events-none'
-        />
-      )}
-      <div className='relative max-w-4xl mx-auto text-center z-10'>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className='mb-10 relative inline-block group'
-        >
-          <div className='absolute -inset-2 rounded-full bg-gradient-to-tr from-cyan-400 via-blue-500 to-purple-500 opacity-60 blur-lg scale-110 group-hover:scale-125 group-hover:opacity-80 transition-all duration-500 z-0'></div>
-          <div className='relative w-[250px] h-[250px] rounded-full overflow-hidden border-4 border-white shadow-2xl mx-auto z-10 hover:scale-105 transition-transform duration-300'>
+const HeroSection = () => (
+  <section className='px-4 pb-20 pt-32 md:pb-28 md:pt-40'>
+    <div className='section-shell center-grid items-center'>
+      <div className='col-span-12 flex justify-center'>
+        <div className='h-28 w-28 overflow-hidden rounded-full border border-[var(--gray-200)] bg-[var(--gray-50)] p-1 shadow-sm'>
+          <div className='relative h-full w-full overflow-hidden rounded-full'>
             <Image
               src='/my_image_prof.png'
               alt='Shivansh Tiwari'
               fill
-              sizes='250px'
-              className='object-cover object-center w-full h-full'
+              sizes='112px'
+              className='object-cover object-center'
               priority
             />
           </div>
-          <div className='absolute bottom-0 right-0 bg-green-400 rounded-full p-1.5 border-2 border-white z-20'>
-            <span className='block w-3 h-3 bg-green-500 rounded-full animate-pulse'></span>
-          </div>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className='text-5xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg bg-gradient-to-r from-white via-blue-200 to-purple-400 bg-clip-text text-transparent'
-        >
-          Shivansh Tiwari
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className='text-2xl md:text-3xl font-semibold text-cyan-200 mb-6'
-        >
-          Software Engineer &amp; System Architect
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className='text-lg md:text-xl text-indigo-50 max-w-3xl mx-auto leading-relaxed mb-10'
-        >
-          I build{' '}
-          <span className='font-semibold text-cyan-300'>
-            scalable, production-grade systems
-          </span>{' '}
-          end to end—ranging from distributed backends and AI-integrated
-          applications to polished React frontends and automated CI/CD
-          pipelines. Let’s turn your idea into a real product.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className='flex flex-col sm:flex-row gap-4 justify-center'
-        >
-          <a
-            href='#projects'
-            className='inline-block px-10 py-4 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-white font-bold text-lg shadow-xl hover:scale-110 hover:from-purple-500 hover:to-cyan-400 transition-all duration-300 border-2 border-white focus:outline-none animate-glow'
-          >
-            🔍 View My Work
-          </a>
-          <a
-            href='#contact'
-            className='inline-block px-10 py-4 rounded-full bg-white/10 backdrop-blur-sm text-white font-bold text-lg shadow-xl hover:scale-110 hover:bg-white/20 transition-all duration-300 border-2 border-white/60 focus:outline-none'
-          >
-            💼 Hire Me
-          </a>
-        </motion.div>
+        </div>
       </div>
-    </section>
-  );
-};
+
+      <div className='col-span-12 mt-7 flex justify-center'>
+        <span className='eyebrow'>Shivansh Tiwari / Software Engineer</span>
+      </div>
+
+      <div className='col-span-12 mt-6 md:col-start-2 md:col-span-10 lg:col-start-3 lg:col-span-8'>
+        <h1 className='text-center text-4xl font-semibold tracking-normal text-[var(--foreground)] md:text-6xl'>
+          Building systems with the curiosity that started it all.
+        </h1>
+      </div>
+
+      <div className='col-span-12 mt-6 md:col-start-3 md:col-span-8'>
+        <p className='text-center text-base leading-8 text-[var(--gray-700)] md:text-lg'>
+          As a kid, I opened up my CPU just to understand what was happening inside.
+          Engineering made me fall in love with low-level languages and the elegance
+          behind how machines really work. Today, in the era of agentic engineering,
+          I get to turn that same curiosity into scalable products, AI workflows,
+          and production systems.
+        </p>
+      </div>
+
+      <div className='col-span-12 mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row'>
+        <a
+          href='#projects'
+          className='inline-flex items-center gap-2 rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-semibold text-[var(--background)] shadow-sm hover:-translate-y-0.5'
+        >
+          View projects
+          <FiArrowRight size={16} />
+        </a>
+        <a
+          href='#contact'
+          className='inline-flex items-center gap-2 rounded-full border border-[var(--gray-200)] bg-[var(--gray-50)] px-6 py-3 text-sm font-semibold text-[var(--foreground)] shadow-sm hover:-translate-y-0.5 hover:bg-[var(--gray-100)]'
+        >
+          Contact me
+        </a>
+      </div>
+
+      <div className='col-span-12 mt-8 flex items-center justify-center gap-2'>
+        {socialLinks.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            target={link.href.startsWith('http') ? '_blank' : undefined}
+            rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            className='grid h-10 w-10 place-items-center rounded-full border border-[var(--gray-200)] bg-[var(--gray-50)] text-[var(--gray-700)] hover:bg-[var(--gray-100)] hover:text-[var(--foreground)]'
+            aria-label={link.label}
+          >
+            {link.icon}
+          </a>
+        ))}
+      </div>
+
+      <div className='col-span-12 mt-14 grid grid-cols-2 gap-3 md:col-start-3 md:col-span-8 md:grid-cols-4'>
+        {stats.map(([value, label]) => (
+          <div
+            key={label}
+            className='rounded-2xl border border-[var(--gray-200)] bg-[var(--gray-50)] px-4 py-5 text-center shadow-sm'
+          >
+            <div className='text-2xl font-semibold text-[var(--foreground)]'>{value}</div>
+            <div className='mt-1 text-xs font-medium uppercase tracking-wide text-[var(--gray-700)]'>
+              {label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default HeroSection;
