@@ -27,16 +27,16 @@ const stats = [
 ];
 
 const HeroSection = () => (
-  <section className='px-4 pb-20 pt-32 md:pb-28 md:pt-40'>
+  <section className='px-4 pb-20 pt-24 md:pb-28 md:pt-28'>
     <div className='section-shell center-grid items-center'>
       <div className='col-span-12 flex justify-center'>
-        <div className='h-28 w-28 overflow-hidden rounded-full border border-[var(--gray-200)] bg-[var(--gray-50)] p-1 shadow-sm'>
+        <div className='h-36 w-36 overflow-hidden rounded-full border border-[var(--gray-200)] bg-[var(--gray-50)] p-1 shadow-sm md:h-40 md:w-40'>
           <div className='relative h-full w-full overflow-hidden rounded-full'>
             <Image
               src='/my_image_prof.png'
               alt='Shivansh Tiwari'
               fill
-              sizes='112px'
+              sizes='(min-width: 768px) 160px, 144px'
               className='object-cover object-center'
               priority
             />
@@ -73,12 +73,6 @@ const HeroSection = () => (
         >
           View projects
           <FiArrowRight size={16} />
-        </a>
-        <a
-          href='#contact'
-          className='inline-flex items-center gap-2 rounded-full border border-[var(--gray-200)] bg-[var(--gray-50)] px-6 py-3 text-sm font-semibold text-[var(--foreground)] shadow-sm hover:-translate-y-0.5 hover:bg-[var(--gray-100)]'
-        >
-          Contact me
         </a>
       </div>
 
