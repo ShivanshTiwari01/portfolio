@@ -7,7 +7,6 @@ const navLinks = [
   'Tech',
   'Projects',
   'Achievements',
-  'Contact',
 ];
 
 const NavBar = () => {
@@ -40,7 +39,7 @@ const NavBar = () => {
             href='#contact'
             className='hidden rounded-full bg-[var(--foreground)] px-4 py-2 text-sm font-semibold text-[var(--background)] hover:opacity-90 md:inline-flex'
           >
-            Hire me
+            Contact
           </a>
           <button
             className='grid h-10 w-10 place-items-center rounded-full text-[var(--gray-700)] hover:bg-[var(--gray-100)] md:hidden'
@@ -69,7 +68,7 @@ const NavBar = () => {
             onClick={() => setMenuOpen(false)}
             className='mt-1 rounded-xl bg-[var(--foreground)] px-4 py-3 text-center text-sm font-semibold text-[var(--background)]'
           >
-            Hire me
+            Contact
           </a>
         </div>
       )}
