@@ -4,7 +4,7 @@ const experiences = [
   {
     company: 'Unjob.ai',
     role: 'Senior Software Developer',
-    period: 'Jan 2026 - Present',
+    period: 'Jan 2026 - Mar 2026',
     highlights: [
       'Building scalable distributed systems for core product development with a focus on performance and reliability.',
       'Partnering with product and leadership teams to turn business requirements into technical strategy.',
