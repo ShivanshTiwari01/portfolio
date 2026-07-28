@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { FaMedium } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const socialLinks = [
   {
@@ -13,6 +15,16 @@ const socialLinks = [
     icon: <FiLinkedin size={18} />,
   },
   {
+    href: 'https://x.com/shivansht01',
+    label: 'X',
+    icon: <FaXTwitter size={17} />,
+  },
+  {
+    href: 'https://shivanshtiwari01.medium.com/',
+    label: 'Medium',
+    icon: <FaMedium size={18} />,
+  },
+  {
     href: 'mailto:shivanshtiwari2014@gmail.com',
     label: 'Email',
     icon: <FiMail size={18} />,
@@ -20,10 +32,10 @@ const socialLinks = [
 ];
 
 const stats = [
-  ['3+', 'Years experience'],
+  ['1M+', 'Requests handled monthly'],
   ['100K+', 'Users served'],
-  ['500+', 'Problems solved'],
-  ['Top 1%', 'Code360 rank'],
+  ['3+', 'Years experience'],
+  ['5+', 'Products owned end-to-end'],
 ];
 
 const HeroSection = () => (
@@ -102,7 +114,7 @@ const HeroSection = () => (
             <div className='text-2xl font-semibold text-[var(--foreground)]'>
               {value}
             </div>
-            <div className='mt-1 text-xs font-medium uppercase tracking-wide text-[var(--gray-700)]'>
+            <div className='mt-1 text-xs font-medium tracking-wide text-[var(--gray-700)]'>
               {label}
             </div>
           </div>

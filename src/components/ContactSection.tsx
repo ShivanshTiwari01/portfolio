@@ -5,6 +5,8 @@ import {
   FiMail,
   FiPhone,
 } from 'react-icons/fi';
+import { FaMedium } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const contactLinks = [
   {
@@ -24,6 +26,18 @@ const contactLinks = [
     icon: <FiGithub className='h-5 w-5' />,
     label: 'GitHub',
     value: 'github.com/ShivanshTiwari01',
+  },
+  {
+    href: 'https://x.com/shivansht01',
+    icon: <FaXTwitter className='h-5 w-5' />,
+    label: 'X',
+    value: 'x.com/shivansht01',
+  },
+  {
+    href: 'https://shivanshtiwari01.medium.com/',
+    icon: <FaMedium className='h-5 w-5' />,
+    label: 'Medium',
+    value: 'shivanshtiwari01.medium.com',
   },
   {
     href: 'tel:+919971864916',

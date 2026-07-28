@@ -1,4 +1,6 @@
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { FaMedium } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => (
   <footer className='border-t border-[var(--gray-200)] px-4 py-10'>
@@ -17,6 +19,16 @@ const Footer = () => (
             href: 'https://linkedin.com/in/shivanshtiwari01',
             label: 'LinkedIn',
             icon: <FiLinkedin size={18} />,
+          },
+          {
+            href: 'https://x.com/shivansht01',
+            label: 'X',
+            icon: <FaXTwitter size={17} />,
+          },
+          {
+            href: 'https://shivanshtiwari01.medium.com/',
+            label: 'Medium',
+            icon: <FaMedium size={18} />,
           },
           {
             href: 'mailto:shivanshtiwari2014@gmail.com',
